@@ -13,6 +13,10 @@ import { determineProtocolAndPort } from '../shared/util';
 import { IApplicationListener } from './application-listener';
 import { HttpCodeTarget } from './application-load-balancer';
 
+// keep this import separate from other imports to reduce chance for merge conflicts with v2-main
+// eslint-disable-next-line no-duplicate-imports, import/order
+import { Construct as CoreConstruct } from '@aws-cdk/core';
+
 /**
  * Properties for defining an Application Target Group
  */

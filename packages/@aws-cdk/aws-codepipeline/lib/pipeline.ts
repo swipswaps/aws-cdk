@@ -15,6 +15,10 @@ import { RichAction } from './private/rich-action';
 import { Stage } from './private/stage';
 import { validateName, validateNamespaceName, validateSourceAction } from './private/validation';
 
+// keep this import separate from other imports to reduce chance for merge conflicts with v2-main
+// eslint-disable-next-line no-duplicate-imports, import/order
+import { Construct as CoreConstruct } from '@aws-cdk/core';
+
 /**
  * Allows you to control where to place a new Stage when it's added to the Pipeline.
  * Note that you can provide only one of the below properties -

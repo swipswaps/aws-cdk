@@ -6,6 +6,10 @@ import { Construct } from 'constructs';
 import { Action } from '../action';
 import { deployArtifactBounds } from '../common';
 
+// keep this import separate from other imports to reduce chance for merge conflicts with v2-main
+// eslint-disable-next-line no-duplicate-imports, import/order
+import { Construct } from '@aws-cdk/core';
+
 // Class copied verbatim from the aws-s3-deployment module.
 // Yes, it sucks that we didn't abstract this properly in a common class,
 // but having 2 different CacheControl classes that behave differently would be worse I think.

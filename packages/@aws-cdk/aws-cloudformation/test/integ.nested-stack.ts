@@ -3,9 +3,15 @@ import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as sqs from '@aws-cdk/aws-sqs';
 import { App, CfnParameter, Stack } from '@aws-cdk/core';
-import { Construct } from 'constructs';
 import * as cfn from '../lib';
 
+// keep this import separate from other imports to reduce chance for merge conflicts with v2-main
+// eslint-disable-next-line no-duplicate-imports, import/order
+import { Construct } from 'constructs';
+
+/* eslint-disable cdk/no-core-construct */
+
+>>>>>>> origin/master
 interface MyNestedStackProps {
   readonly subscriber?: sqs.Queue;
   readonly siblingTopic?: sns.Topic; // a topic defined in a sibling nested stack

@@ -9,6 +9,10 @@ import * as consts from './runtime/consts';
 import { calculateRetryPolicy } from './util';
 import { WaiterStateMachine } from './waiter-state-machine';
 
+// keep this import separate from other imports to reduce chance for merge conflicts with v2-main
+// eslint-disable-next-line no-duplicate-imports, import/order
+import { Construct as CoreConstruct } from '@aws-cdk/core';
+
 const RUNTIME_HANDLER_PATH = path.join(__dirname, 'runtime');
 const FRAMEWORK_HANDLER_TIMEOUT = Duration.minutes(15); // keep it simple for now
 
